@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=4 uid="uid://ds10g6gl3cmw7"]
+
+[ext_resource type="PackedScene" uid="uid://co88ebwme07kn" path="res://Cenas/main_character.tscn" id="1_wmio6"]
+[ext_resource type="Texture2D" uid="uid://dsd0c5ukn1ln8" path="res://assests/sprites/platforms.png" id="2_xp8ej"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kipi3"]
+texture = ExtResource("2_xp8ej")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g65vy"]
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_kipi3")
+
+[node name="Node" type="Node"]
+
+[node name="Personagem" parent="." instance=ExtResource("1_wmio6")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_g65vy")
