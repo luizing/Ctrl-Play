@@ -57,3 +57,7 @@ Player1Pulo={
 
 2d_render/layer_1="Main"
 2d_render/layer_2="Floor"
+2d_physics/layer_1="Knight"
+2d_physics/layer_2="Plataforma"
+2d_physics/layer_3="Tileset1"
+2d_physics/layer_4="InversorDeControles"
