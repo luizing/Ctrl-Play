@@ -47,3 +47,10 @@ func die():
 	#emitir sinal
 	pass
 	
+
+
+func _on_inversor_trocar_controle() -> void:
+	if player1:
+		player1 = false
+	else:
+		player1 = true

@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-const SPEED = 100.0
+const SPEED = 115.0
 var velocity_x = 0.0
 var player1 = false #Essa variavel diz qual o player controla esse personagem.
 
@@ -56,3 +56,10 @@ func _physics_process(delta: float) -> void:
 			position.y = start_y
 			velocity_y = 0
 			is_jumping = false
+
+
+func _on_inversor_trocar_controle() -> void:
+	if player1:
+		player1 = false
+	else:
+		player1 = true

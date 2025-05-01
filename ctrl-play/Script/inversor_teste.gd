@@ -10,7 +10,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _on_body_exited(body: Node2D) -> void:
+	print("Troca de controles em 2 segundos!")
+	$TimerInverterControles.start()
+	
+	
 
-func _on_area_entered(area: Area2D) -> void:
+
+func _on_timer_inverter_controles_timeout() -> void:
 	emit_signal("TrocarControle")
-	pass # Replace with function body.
