@@ -55,3 +55,7 @@ func _on_inversor_trocar_controle() -> void:
 		player1 = false
 	else:
 		player1 = true
+
+
+func _on_k_iller_test_body_entered(body: Node2D) -> void:
+	die()
