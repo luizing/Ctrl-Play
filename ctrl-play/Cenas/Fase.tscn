@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://ds10g6gl3cmw7"]
+[gd_scene load_steps=9 format=4 uid="uid://ds10g6gl3cmw7"]
 
 [ext_resource type="PackedScene" uid="uid://d38r65dc7gwxw" path="res://Cenas/InversorTeste.tscn" id="1_dbpjx"]
+[ext_resource type="Script" path="res://Cenas/faseGeneric.gd" id="1_obm76"]
 [ext_resource type="PackedScene" uid="uid://co88ebwme07kn" path="res://Cenas/main_character.tscn" id="1_wmio6"]
+[ext_resource type="PackedScene" uid="uid://c3de1vhaq3yec" path="res://Cenas/k_iller_test.tscn" id="2_dxmfk"]
 [ext_resource type="Texture2D" uid="uid://dsd0c5ukn1ln8" path="res://assests/sprites/platforms.png" id="2_xp8ej"]
 [ext_resource type="PackedScene" uid="uid://cxjo8qpqay7py" path="res://Cenas/plataforma.tscn" id="3_vq71l"]
 
@@ -29,6 +31,10 @@ physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_kipi3")
 
 [node name="Node" type="Node"]
+script = ExtResource("1_obm76")
+
+[node name="KIllerTest" parent="." instance=ExtResource("2_dxmfk")]
+position = Vector2(-195, 131)
 
 [node name="Inversor" parent="." instance=ExtResource("1_dbpjx")]
 position = Vector2(79, 4)
@@ -52,3 +58,4 @@ position = Vector2(78, -11)
 [connection signal="body_entered" from="Inversor" to="Inversor" method="_on_body_entered"]
 [connection signal="body_exited" from="Inversor" to="Inversor" method="_on_body_exited"]
 [connection signal="timeout" from="Inversor/TimerInverterControles" to="Inversor" method="_on_timer_inverter_controles_timeout"]
+[connection signal="death" from="Personagem" to="." method="_on_personagem_death"]

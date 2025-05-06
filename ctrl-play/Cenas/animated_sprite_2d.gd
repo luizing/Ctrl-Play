@@ -1,6 +1,5 @@
 extends AnimatedSprite2D
 
-
 func trigger_animation(velocity: Vector2, direction: int):
 	
 	if direction != 0:

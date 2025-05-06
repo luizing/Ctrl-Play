@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var animated_sprite_2d = $AnimatedSprite2D as AnimatedSprite2D
+@onready var animated_sprite_2d = $Animation as AnimatedSprite2D
 
 signal death
 
@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed(pulo) and is_on_floor():
+		$Sounds/Jump.play()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -44,8 +45,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die():
-	#emitir sinal
-	pass
+	$Sounds/Death.play()
+	emit_signal("death")
 	
 
 
