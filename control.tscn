@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm21k8hqg6uqc"]
+
+[ext_resource type="Texture2D" uid="uid://osl7ww2e2hji" path="res://Cenas/Imagem do WhatsApp de 2025-05-05 à(s) 10.01.34_f8c35655.jpg" id="1_crttf"]
+[ext_resource type="FontFile" uid="uid://bj0ljlse0e50o" path="res://Cenas/sprites/PressStart2P-Regular.ttf" id="1_j88tc"]
+[ext_resource type="Texture2D" uid="uid://c30xlivj3ro1b" path="res://Cenas/sprites/knight.png" id="3_40h0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y672a"]
+atlas = ExtResource("3_40h0n")
+region = Rect2(0, 0, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2dxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y672a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = -0.125
+anchor_right = 32.2
+anchor_bottom = 17.875
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_crttf")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_left = 470.0
+offset_top = 391.0
+offset_right = 889.0
+offset_bottom = 653.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Iniciar_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_j88tc")
+theme_override_font_sizes/font_size = 40
+button_mask = 0
+text = "START"
+
+[node name="Creditos_btn2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_j88tc")
+theme_override_font_sizes/font_size = 40
+text = "CREDITS
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 386.0
+offset_top = -71.0
+offset_right = 820.0
+offset_bottom = 334.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.643137, 0, 1)
+theme_override_fonts/font = ExtResource("1_j88tc")
+theme_override_font_sizes/font_size = 53
+text = "  DOIS
+  	PASSOS
+  JUNTOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(522, 366)
+scale = Vector2(3.25586, 2.84722)
+sprite_frames = SubResource("SpriteFrames_w2dxx")
+offset = Vector2(30, 0)
