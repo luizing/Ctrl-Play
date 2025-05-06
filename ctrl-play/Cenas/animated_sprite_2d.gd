@@ -1,7 +1,5 @@
 extends AnimatedSprite2D
 
-class_name Animacao
-
 
 func trigger_animation(velocity: Vector2, direction: int):
 	
