@@ -48,6 +48,7 @@ func die():
 	$Sounds/Death.play()
 	emit_signal("death")
 	
+	
 
 
 func _on_inversor_trocar_controle() -> void:

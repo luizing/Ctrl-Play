@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgah0elf1e8h4"]
 
-[ext_resource type="Texture2D" uid="uid://dahunn4pwhm85" path="res://Telas/Imagem do WhatsApp de 2025-05-05 à(s) 21.39.10_5ba4adeb.jpg" id="1_364uc"]
-[ext_resource type="FontFile" uid="uid://bj0ljlse0e50o" path="res://Cenas/sprites/PressStart2P-Regular.ttf" id="2_xob7e"]
+[ext_resource type="Texture2D" uid="uid://b03hj2btjwuf" path="res://assests/imagem/gameover.jpg" id="1_364uc"]
+[ext_resource type="FontFile" uid="uid://bj0ljlse0e50o" path="res://Cenas/PressStart2P-Regular.ttf" id="2_xob7e"]
 
 [node name="Abobrinha" type="Control"]
 layout_mode = 3
@@ -59,6 +59,7 @@ text = "EXIT
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 0, 0, 1)
+layout_mode = 0
 offset_left = 504.0
 offset_top = 187.0
 offset_right = 801.0

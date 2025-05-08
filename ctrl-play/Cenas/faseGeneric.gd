@@ -1,6 +1,6 @@
 extends Node
 
-var deathPath = "res://Cenas/killzone.tscn"
+var deathPath = "res://Cenas/abobrinha.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +12,6 @@ func _process(delta: float) -> void:
 	pass
 	
 
-
 func _on_personagem_death() -> void:
 	print("morte")
-	get_tree().change_scene(deathPath)
+	get_tree().change_scene_to_file(deathPath)
