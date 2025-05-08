@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bj0ljlse0e50o"
-path="res://.godot/imported/PressStart2P-Regular.ttf-9d4783f81588f76a2276240f01317037.fontdata"
+path="res://.godot/imported/PressStart2P-Regular.ttf-fdb081adc6e92859fb83be242442b2b0.fontdata"
 
 [deps]
 
-source_file="res://Cenas/sprites/PressStart2P-Regular.ttf"
-dest_files=["res://.godot/imported/PressStart2P-Regular.ttf-9d4783f81588f76a2276240f01317037.fontdata"]
+source_file="res://Cenas/PressStart2P-Regular.ttf"
+dest_files=["res://.godot/imported/PressStart2P-Regular.ttf-fdb081adc6e92859fb83be242442b2b0.fontdata"]
 
 [params]
 
@@ -23,7 +23,6 @@ allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=1
-keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
