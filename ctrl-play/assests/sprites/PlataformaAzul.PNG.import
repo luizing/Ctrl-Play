@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jek8lkni2f1r"
-valid=false
+uid="uid://c6cbn5ircvhf4"
+path="res://.godot/imported/PlataformaAzul.PNG-105b35743a7fdbc9ef9507f6299fbb50.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assests/sprites/PlataformaAzul.PNG"
+dest_files=["res://.godot/imported/PlataformaAzul.PNG-105b35743a7fdbc9ef9507f6299fbb50.ctex"]
 
 [params]
 
