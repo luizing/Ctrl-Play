@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ctrl Play"
-run/main_scene="res://Cenas/Fase.tscn"
+run/main_scene="res://Cenas/control.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

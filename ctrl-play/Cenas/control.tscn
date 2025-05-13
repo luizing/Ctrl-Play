@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt67tp1obwu38"]
+[gd_scene load_steps=10 format=3 uid="uid://dt67tp1obwu38"]
 
 [ext_resource type="Texture2D" uid="uid://c64xlat68222d" path="res://Cenas/Imagem do WhatsApp de 2025-05-05 à(s) 10.01.34_f8c35655.jpg" id="1_crttf"]
+[ext_resource type="Script" path="res://Cenas/TelaInicial.gd" id="1_dx0m0"]
 [ext_resource type="FontFile" uid="uid://bj0ljlse0e50o" path="res://Cenas/PressStart2P-Regular.ttf" id="1_j88tc"]
 [ext_resource type="Texture2D" uid="uid://cs6rkocujm0r2" path="res://assests/sprites/knight.png" id="3_echdf"]
 
@@ -45,6 +46,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_dx0m0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -83,22 +85,13 @@ alignment = 1
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Iniciar_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("1_j88tc")
-theme_override_font_sizes/font_size = 40
-button_mask = 0
-text = "START"
-
 [node name="Creditos_btn2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("1_j88tc")
 theme_override_font_sizes/font_size = 40
-text = "CREDITS
+text = "Start
 "
 
 [node name="Label" type="Label" parent="."]
@@ -121,8 +114,10 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 352)
+position = Vector2(576, 366)
 scale = Vector2(3.25586, 2.84722)
 sprite_frames = SubResource("SpriteFrames_w2dxx")
 autoplay = "default"
 offset = Vector2(30, 0)
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Creditos_btn2" to="." method="_on_creditos_btn_2_pressed"]

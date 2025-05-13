@@ -5,7 +5,7 @@ extends CharacterBody2D
 signal death
 
 const SPEED = 120.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player1 = true #Essa variavel diz qual o player controla esse personagem.
 

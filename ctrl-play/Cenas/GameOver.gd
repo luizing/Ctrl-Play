@@ -1,6 +1,7 @@
-extends Area2D
+extends Control
 
-var Fasecaminho = "res://Cenas/abobrinha.tscn"
+var restartPath = "res://Fase 1.tscn"
+var exitPath = "res://Fase 2.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +13,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file(Fasecaminho)
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file(restartPath)

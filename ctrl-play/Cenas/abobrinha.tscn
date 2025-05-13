@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgah0elf1e8h4"]
+[gd_scene load_steps=4 format=3 uid="uid://cgah0elf1e8h4"]
 
 [ext_resource type="Texture2D" uid="uid://b03hj2btjwuf" path="res://assests/imagem/gameover.jpg" id="1_364uc"]
+[ext_resource type="Script" path="res://Cenas/GameOver.gd" id="1_wc48m"]
 [ext_resource type="FontFile" uid="uid://bj0ljlse0e50o" path="res://Cenas/PressStart2P-Regular.ttf" id="2_xob7e"]
 
 [node name="Abobrinha" type="Control"]
@@ -11,6 +12,7 @@ anchor_bottom = 1.0
 offset_right = -1280.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wc48m")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -69,3 +71,5 @@ theme_override_font_sizes/font_size = 33
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[connection signal="pressed" from="TextureRect/MarginContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
