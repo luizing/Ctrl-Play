@@ -8,8 +8,10 @@ const SPEED = 120.0
 const JUMP_VELOCITY = -200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player1 = true #Essa variavel diz qual o player controla esse personagem.
+$Sounds/Soundtrack.play()
 
 func _physics_process(delta: float) -> void:
+	
 	# --- Lida com quem controla o personagem --- #
 	var esquerda
 	var direita
