@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dacfd6hqs8qur"]
+
+[ext_resource type="Script" path="res://Script/DialogBox.gd" id="1_uidrl"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_uidrl")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -5,7 +5,7 @@ extends CharacterBody2D
 signal death
 
 const SPEED = 120.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player1 = true #Essa variavel diz qual o player controla esse personagem.
 
@@ -48,14 +48,19 @@ func die():
 	$Sounds/Death.play()
 	emit_signal("death")
 	
-
-
 func _on_inversor_trocar_controle() -> void:
 	if player1:
 		player1 = false
 	else:
 		player1 = true
 
-
 func _on_k_iller_test_body_entered(body: Node2D) -> void:
 	die()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is Portal:
+		get_tree().change_scene_to_file("res://Fase2.tscn")
+	if area is Portal2:
+		get_tree().change_scene_to_file("res://Cenas/vitoria.tscn")
+		
+		
