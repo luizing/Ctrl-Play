@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlg8pdmlwt4h3"]
+
+[ext_resource type="Script" path="res://Cenas/trocar.gd" id="1_keoah"]
+[ext_resource type="AudioStream" uid="uid://dssois6w8iuqn" path="res://assests/music/trocarControle.wav" id="2_hdn0i"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_keoah")
+
+[node name="main_timer" type="Timer" parent="."]
+
+[node name="countdown_timer" type="Timer" parent="."]
+
+[node name="TrocarSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hdn0i")
+volume_db = 24.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="countdown_label" type="Label" parent="CanvasLayer"]
+offset_left = -3.0
+offset_top = -93.0
+offset_right = 1280.0
+offset_bottom = 624.0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1

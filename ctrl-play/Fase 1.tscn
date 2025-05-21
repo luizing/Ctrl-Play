@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://c5ds81cdv51o3"]
+[gd_scene load_steps=11 format=4 uid="uid://c5ds81cdv51o3"]
 
 [ext_resource type="PackedScene" uid="uid://h5s65b28hrv4" path="res://Cenas/portal.tscn" id="1_1mhfn"]
 [ext_resource type="Texture2D" uid="uid://brqm4htgvythd" path="res://assests/sprites/world_tileset.png" id="1_dfnxj"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxjo8qpqay7py" path="res://Cenas/plataforma.tscn" id="3_yna57"]
 [ext_resource type="PackedScene" uid="uid://c3de1vhaq3yec" path="res://Cenas/k_iller_test.tscn" id="4_r1y58"]
 [ext_resource type="Script" path="res://Cenas/k_iller_test.gd" id="5_pwpmm"]
+[ext_resource type="PackedScene" uid="uid://dlg8pdmlwt4h3" path="res://Cenas/relogio.tscn" id="8_377s4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_680xr"]
 texture = ExtResource("1_dfnxj")
@@ -262,7 +263,7 @@ tile_set = SubResource("TileSet_qdi42")
 [node name="Personagem" parent="." instance=ExtResource("2_g6qve")]
 position = Vector2(-578, 15)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_yna57")]
+[node name="Plataforma" parent="." instance=ExtResource("3_yna57")]
 position = Vector2(-460, 78)
 
 [node name="KIllerTest" parent="." instance=ExtResource("4_r1y58")]
@@ -280,5 +281,9 @@ script = ExtResource("5_pwpmm")
 [node name="Portal" parent="." instance=ExtResource("1_1mhfn")]
 position = Vector2(501, 47)
 
+[node name="Relogio" parent="." instance=ExtResource("8_377s4")]
+
 [connection signal="body_entered" from="KIllerTest" to="KIllerTest" method="_on_body_entered"]
 [connection signal="body_entered" from="KIllerTest2" to="KIllerTest2" method="_on_body_entered"]
+[connection signal="TrocarControle" from="Relogio" to="Personagem" method="_on_relogio_trocar_controle"]
+[connection signal="TrocarControle" from="Relogio" to="Plataforma" method="_on_relogio_trocar_controle"]

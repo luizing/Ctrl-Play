@@ -227,6 +227,8 @@ stream = ExtResource("5_h3sc7")
 
 [node name="Soundtrack" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("6_5y5f0")
+volume_db = 1.0
+autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 16

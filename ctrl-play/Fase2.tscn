@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ckwl6y64ow8mk"]
+[gd_scene load_steps=17 format=4 uid="uid://ckwl6y64ow8mk"]
 
 [ext_resource type="PackedScene" uid="uid://co88ebwme07kn" path="res://Cenas/main_character.tscn" id="1_ra5pe"]
 [ext_resource type="Texture2D" uid="uid://brqm4htgvythd" path="res://assests/sprites/world_tileset.png" id="1_rpna0"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1hprlcq4coup" path="res://Cenas/nuvem.tscn" id="4_oijx4"]
 [ext_resource type="PackedScene" uid="uid://damibvfpbtvs6" path="res://Cenas/portal2.tscn" id="6_cccbd"]
 [ext_resource type="PackedScene" uid="uid://cxjo8qpqay7py" path="res://Cenas/plataforma.tscn" id="6_ni1sl"]
+[ext_resource type="PackedScene" uid="uid://dlg8pdmlwt4h3" path="res://Cenas/relogio.tscn" id="7_eu4ae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_680xr"]
 texture = ExtResource("1_rpna0")
@@ -327,5 +328,7 @@ position = Vector2(-550, 76)
 
 [node name="Portal" parent="." instance=ExtResource("6_cccbd")]
 position = Vector2(504, 45)
+
+[node name="Node" parent="." instance=ExtResource("7_eu4ae")]
 
 [connection signal="area_entered" from="Portal" to="Personagem" method="_on_portal_area_entered"]
