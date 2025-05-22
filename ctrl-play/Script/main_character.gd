@@ -57,7 +57,7 @@ func _on_k_iller_test_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Portal:
-		get_tree().change_scene_to_file("res://Fase2.tscn")
+		get_tree().change_scene_to_file("res://Cenas/imagem_3.tscn")
 	if area is Portal2:
 		get_tree().change_scene_to_file("res://Cenas/vitoria.tscn")
 		

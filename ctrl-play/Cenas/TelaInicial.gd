@@ -1,7 +1,6 @@
 extends Control
 
-var startPath = "res://Fase 1.tscn"
-var CreditosPath = ""
+var startPath = "res://Cenas/imagem_1.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

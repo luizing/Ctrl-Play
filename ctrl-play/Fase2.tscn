@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://ckwl6y64ow8mk"]
+[gd_scene load_steps=19 format=4 uid="uid://ckwl6y64ow8mk"]
 
 [ext_resource type="PackedScene" uid="uid://co88ebwme07kn" path="res://Cenas/main_character.tscn" id="1_ra5pe"]
 [ext_resource type="Texture2D" uid="uid://brqm4htgvythd" path="res://assests/sprites/world_tileset.png" id="1_rpna0"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://damibvfpbtvs6" path="res://Cenas/portal2.tscn" id="6_cccbd"]
 [ext_resource type="PackedScene" uid="uid://cxjo8qpqay7py" path="res://Cenas/plataforma.tscn" id="6_ni1sl"]
 [ext_resource type="PackedScene" uid="uid://dlg8pdmlwt4h3" path="res://Cenas/relogio.tscn" id="7_eu4ae"]
+[ext_resource type="PackedScene" uid="uid://c3de1vhaq3yec" path="res://Cenas/k_iller_test.tscn" id="8_yhf4d"]
+[ext_resource type="Script" path="res://Cenas/k_iller_test.gd" id="9_xity0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_680xr"]
 texture = ExtResource("1_rpna0")
@@ -323,12 +325,22 @@ position = Vector2(466, -99)
 [node name="nuvem2" parent="." instance=ExtResource("4_oijx4")]
 position = Vector2(-248, -89)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("6_ni1sl")]
+[node name="Plataforma" parent="." instance=ExtResource("6_ni1sl")]
 position = Vector2(-550, 76)
 
 [node name="Portal" parent="." instance=ExtResource("6_cccbd")]
 position = Vector2(504, 45)
 
-[node name="Node" parent="." instance=ExtResource("7_eu4ae")]
+[node name="Relogio" parent="." instance=ExtResource("7_eu4ae")]
+
+[node name="KIllerTest" parent="." instance=ExtResource("8_yhf4d")]
+position = Vector2(-352, 115)
+script = ExtResource("9_xity0")
+
+[node name="KIllerTest2" parent="." instance=ExtResource("8_yhf4d")]
+position = Vector2(688, 116)
+script = ExtResource("9_xity0")
 
 [connection signal="area_entered" from="Portal" to="Personagem" method="_on_portal_area_entered"]
+[connection signal="TrocarControle" from="Relogio" to="Personagem" method="_on_relogio_trocar_controle"]
+[connection signal="TrocarControle" from="Relogio" to="Plataforma" method="_on_relogio_trocar_controle"]

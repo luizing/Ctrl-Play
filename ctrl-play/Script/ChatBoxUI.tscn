@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwvkkm5evhgqw"]
+
+[ext_resource type="Script" path="res://Script/ChatBoxUI.gd" id="1_b46ya"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_b46ya")
+
+[node name="ChatPanel" type="Panel" parent="."]
+visible = false
+offset_right = 1279.0
+offset_bottom = 94.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ChatPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MessageContainer" type="VBoxContainer" parent="ChatPanel/ScrollContainer"]
+layout_mode = 2
+
+[node name="MessageTimer" type="Timer" parent="ChatPanel"]

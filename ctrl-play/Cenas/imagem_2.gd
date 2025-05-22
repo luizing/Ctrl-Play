@@ -1,7 +1,5 @@
-extends Area2D
+extends Node
 
-class_name Portal
-var Path = "res://Cenas/imagem_3.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,3 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://Fase 1.tscn")

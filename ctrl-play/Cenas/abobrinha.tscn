@@ -59,11 +59,51 @@ theme_override_font_sizes/font_size = 33
 text = "EXIT
 "
 
+[node name="Historia1" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = -74.0
+offset_top = -35.0
+offset_right = 451.0
+offset_bottom = 222.0
+text = "No começo, tudo era tropeço.
+Um pulava cedo demais.
+O outro escorregava tarde demais.
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Historia2" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 147.0
+offset_right = 1268.0
+offset_bottom = 300.0
+text = "Mas devagar, com palavras e olhares, 
+aprenderam a se ouvir.
+ A esperar e a tentar de novo.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Historia3" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 288.0
+offset_right = 840.0
+offset_bottom = 389.0
+text = "
+E logo, as pedras deixaram de parecer tão altas.
+As falhas, menos assustadoras.
+Porque agora, cair significava recomeçar… juntos."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 0
 offset_left = 504.0
-offset_top = 187.0
+offset_top = 209.0
 offset_right = 801.0
 offset_bottom = 256.0
 theme_override_fonts/font = ExtResource("2_xob7e")

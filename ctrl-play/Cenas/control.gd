@@ -1,7 +1,5 @@
-extends Area2D
+extends Control
 
-class_name Portal
-var Path = "res://Cenas/imagem_3.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
