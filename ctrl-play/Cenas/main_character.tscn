@@ -1,8 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://co88ebwme07kn"]
+[gd_scene load_steps=34 format=3 uid="uid://co88ebwme07kn"]
 
 [ext_resource type="Script" path="res://Script/main_character.gd" id="1_g6kbb"]
 [ext_resource type="Texture2D" uid="uid://cs6rkocujm0r2" path="res://assests/sprites/knight.png" id="1_q7d53"]
 [ext_resource type="Script" path="res://Cenas/animated_sprite_2d.gd" id="3_rm3es"]
+[ext_resource type="AudioStream" uid="uid://c0s2jboww5icd" path="res://assests/sounds/jump.wav" id="4_2qjhj"]
+[ext_resource type="AudioStream" uid="uid://4eodalehrevq" path="res://assests/sounds/hurt.wav" id="5_h3sc7"]
+[ext_resource type="AudioStream" uid="uid://beeidixnumq1o" path="res://assests/music/loop autofagia.wav" id="6_5y5f0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4ugp"]
 size = Vector2(10, 17)
@@ -193,20 +196,45 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si63i"]
+size = Vector2(13, 19)
+
 [node name="Personagem" type="CharacterBody2D"]
-collision_mask = 14
+collision_mask = 30
 script = ExtResource("1_g6kbb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_f4ugp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_nptyq")
 animation = &"death"
 autoplay = "idle"
 script = ExtResource("3_rm3es")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(4.5, 4.5)
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("4_2qjhj")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_h3sc7")
+
+[node name="Soundtrack" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("6_5y5f0")
+volume_db = 1.0
+autoplay = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_si63i")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

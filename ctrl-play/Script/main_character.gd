@@ -1,15 +1,17 @@
 extends CharacterBody2D
 
-@onready var animated_sprite_2d = $AnimatedSprite2D as AnimatedSprite2D
+@onready var animated_sprite_2d = $Animation as AnimatedSprite2D
 
 signal death
 
 const SPEED = 120.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player1 = true #Essa variavel diz qual o player controla esse personagem.
 
+
 func _physics_process(delta: float) -> void:
+	
 	# --- Lida com quem controla o personagem --- #
 	var esquerda
 	var direita
@@ -30,6 +32,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed(pulo) and is_on_floor():
+		$Sounds/Jump.play()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -44,12 +47,24 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die():
-	#emitir sinal
-	pass
+	$Sounds/Death.play()
+	emit_signal("death")
 	
 
 
-func _on_inversor_trocar_controle() -> void:
+func _on_k_iller_test_body_entered(body: Node2D) -> void:
+	die()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is Portal:
+		get_tree().change_scene_to_file("res://Cenas/imagem_3.tscn")
+	if area is Portal2:
+		get_tree().change_scene_to_file("res://Cenas/vitoria.tscn")
+		
+		
+
+
+func _on_relogio_trocar_controle() -> void:
 	if player1:
 		player1 = false
 	else:

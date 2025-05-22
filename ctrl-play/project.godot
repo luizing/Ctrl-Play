@@ -11,14 +11,17 @@ config_version=5
 [application]
 
 config/name="Ctrl Play"
-run/main_scene="res://Cenas/Fase.tscn"
+run/main_scene="res://Cenas/control.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [input]
 
@@ -61,3 +64,8 @@ Player1Pulo={
 2d_physics/layer_2="Plataforma"
 2d_physics/layer_3="Tileset1"
 2d_physics/layer_4="InversorDeControles"
+2d_physics/layer_5="portal"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.544418, 0.6965, 1, 1)

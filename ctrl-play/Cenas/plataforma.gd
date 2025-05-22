@@ -57,8 +57,7 @@ func _physics_process(delta: float) -> void:
 			velocity_y = 0
 			is_jumping = false
 
-
-func _on_inversor_trocar_controle() -> void:
+func _on_relogio_trocar_controle() -> void:
 	if player1:
 		player1 = false
 	else:

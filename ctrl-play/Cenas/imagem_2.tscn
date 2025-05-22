@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqdp8tuv8loq2"]
+
+[ext_resource type="Texture2D" uid="uid://0qw2mswigymq" path="res://assests/imagem/inicio2.jpeg" id="1_33a6x"]
+[ext_resource type="Script" path="res://Cenas/imagem_2.gd" id="1_ri0il"]
+
+[node name="Imagem2" type="Node"]
+script = ExtResource("1_ri0il")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 1286.0
+offset_bottom = 723.0
+texture = ExtResource("1_33a6x")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
